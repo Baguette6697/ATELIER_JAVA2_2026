@@ -86,6 +86,13 @@ Créer un rectangle de 5 par 3 et afficher sa surface.</p>
     <li>Surface : <%= monRectangle.calculerSurface() %> m²</li>
 </ul>
 
+<h2>Exercice 5 : L'encapsulation</h2>
+<p>Modifier la classe <code>Personne</code> pour rendre les attributs <code>privés</code>.</br>
+Ajouter les getters et setters correspondants : <code>getNom()</code>, <code>setNom(...)</code>, <code>getAge()</code>, <code>setAge(...)</code>.</br>
+Adapter ensuite le code de la page pour utiliser ces accesseurs au lieu d'accéder directement aux attributs.</p>
+
+<% } %>
+
 <h2>Exercice 4 : Le compte bancaire</h2>
 <p>Créer une classe <code>CompteBancaire</code> avec un attribut <code>solde</code>.</br>
 Ajouter deux méthodes : <code>deposer(double montant)</code> et <code>retirer(double montant)</code>.</br>
@@ -129,13 +136,5 @@ Créer un compte, déposer 100€, retirer 30€, puis afficher le solde final.<
 
 <p><strong>Résultat Exercice 4 :</strong></p>
 <p>Solde actuel : <strong><%= String.format("%.2f", compte.solde) %> €</strong></p>
-
-<h2>Exercice 5 : L'encapsulation</h2>
-<p>Modifier la classe <code>Personne</code> pour rendre les attributs <code>privés</code>.</br>
-Ajouter les getters et setters correspondants : <code>getNom()</code>, <code>setNom(...)</code>, <code>getAge()</code>, <code>setAge(...)</code>.</br>
-Adapter ensuite le code de la page pour utiliser ces accesseurs au lieu d'accéder directement aux attributs.</p>
-
-<% } %>
-<p><a href="index.html">Retour au sommaire</a></p>
 </body>
 </html>
