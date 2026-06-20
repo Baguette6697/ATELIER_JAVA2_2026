@@ -91,9 +91,14 @@ Créer un rectangle de 5 par 3 et afficher sa surface.</p>
 Ajouter deux méthodes : <code>deposer(double montant)</code> et <code>retirer(double montant)</code>.</br>
 Créer un compte, déposer 100€, retirer 30€, puis afficher le solde final.</p>
 
-<%-- Initialize the bank account --%>
+<%-- Initialize the bank account using session to persist data --%>
 <%
-    CompteBancaire compte = new CompteBancaire();
+    // Get or create the CompteBancaire object in session
+    CompteBancaire compte = (CompteBancaire) session.getAttribute("compte");
+    if (compte == null) {
+        compte = new CompteBancaire();
+        session.setAttribute("compte", compte);
+    }
     
     // Check which action was performed
     String action = request.getParameter("action");
@@ -107,6 +112,8 @@ Créer un compte, déposer 100€, retirer 30€, puis afficher le solde final.<
             } else if ("retirer".equals(action)) {
                 compte.retirer(montant);
             }
+            // Update session with new solde
+            session.setAttribute("compte", compte);
         } catch (NumberFormatException e) {
             // Invalid number format
         }
