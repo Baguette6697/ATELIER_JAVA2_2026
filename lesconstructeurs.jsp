@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="exercice.Etudiant" %>
 <html>
 <head>
 <title>Les constructeurs</title>
@@ -52,6 +53,18 @@
 - l'attribut <code>nom</code> à "Anonyme"</br>
 - l'attribut <code>note</code> à 10.</br>
 Instancier un étudiant avec ce constructeur et afficher ses informations.</p>
+
+<%-- STEP 1: Call and display the Etudiant class with default constructor --%>
+<%
+    // Creating a student with the default constructor
+    Etudiant etudiant1 = new Etudiant();
+%>
+<p><strong>Résultat Exercice 1 :</strong></p>
+<p>Étudiant créé via le constructeur par défaut :</p>
+<ul>
+    <li>Nom : <%= etudiant1.nom %></li>
+    <li>Note : <%= etudiant1.note %></li>
+</ul>
 
 <h2>Exercice 2 : La surcharge de constructeurs</h2>
 <p>Ajouter à la classe <code>Etudiant</code> deux autres constructeurs :</br>
