@@ -2,6 +2,7 @@
 <%-- STEP 1: Import your external classes at the top --%>
 <%@page import="exercice.Voiture" %> 
 <%@page import="exercice.Rectangle" %> 
+<%@page import="exercice.CompteBancaire" %> 
 
 <html>
 <head>
@@ -89,6 +90,38 @@ Créer un rectangle de 5 par 3 et afficher sa surface.</p>
 <p>Créer une classe <code>CompteBancaire</code> avec un attribut <code>solde</code>.</br>
 Ajouter deux méthodes : <code>deposer(double montant)</code> et <code>retirer(double montant)</code>.</br>
 Créer un compte, déposer 100€, retirer 30€, puis afficher le solde final.</p>
+
+<%-- Initialize the bank account --%>
+<%
+    CompteBancaire compte = new CompteBancaire();
+    
+    // Check which action was performed
+    String action = request.getParameter("action");
+    String montantStr = request.getParameter("montant");
+    
+    if (action != null && montantStr != null && !montantStr.isEmpty()) {
+        try {
+            double montant = Double.parseDouble(montantStr);
+            if ("deposer".equals(action)) {
+                compte.deposer(montant);
+            } else if ("retirer".equals(action)) {
+                compte.retirer(montant);
+            }
+        } catch (NumberFormatException e) {
+            // Invalid number format
+        }
+    }
+%>
+
+<form action="#" method="post">
+    <p>Montant (€) : <input type="number" name="montant" step="0.01" min="0" required>
+    <button type="submit" name="action" value="deposer">Déposer</button>
+    <button type="submit" name="action" value="retirer">Retirer</button>
+    </p>
+</form>
+
+<p><strong>Résultat Exercice 4 :</strong></p>
+<p>Solde actuel : <strong><%= String.format("%.2f", compte.solde) %> €</strong></p>
 
 <h2>Exercice 5 : L'encapsulation</h2>
 <p>Modifier la classe <code>Personne</code> pour rendre les attributs <code>privés</code>.</br>
