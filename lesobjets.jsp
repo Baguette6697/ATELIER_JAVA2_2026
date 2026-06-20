@@ -19,6 +19,11 @@
     class Personne {
         String nom;
         int age;
+
+        // Méthode seDecrire pour l'exercice 2
+        String seDecrire() {
+            return "Je m'appelle " + nom + " et j'ai " + age + " ans";
+        }
     }
 %>
 
@@ -58,6 +63,9 @@ Instancier une voiture, lui affecter des valeurs et afficher ses caractéristiqu
 <p>Ajouter à la classe <code>Personne</code> une méthode <code>seDecrire()</code> qui retourne une chaîne du type :</br>
 "Je m'appelle Marie et j'ai 25 ans".</br>
 Appeler cette méthode sur l'objet <code>p</code> et afficher le résultat.</p>
+
+<p><strong>Résultat Exercice 2 :</strong></p>
+<p><%= p.seDecrire() %></p>
 
 <h2>Exercice 3 : La classe Rectangle</h2>
 <p>Créer une classe <code>Rectangle</code> avec les attributs <code>longueur</code> et <code>largeur</code>.</br>
