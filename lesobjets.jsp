@@ -1,6 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%-- STEP 1: Import your external Voiture class at the top --%>
+<%-- STEP 1: Import your external classes at the top --%>
 <%@page import="exercice.Voiture" %> 
+<%@page import="exercice.Rectangle" %> 
 
 <html>
 <head>
@@ -71,6 +72,18 @@ Appeler cette méthode sur l'objet <code>p</code> et afficher le résultat.</p>
 <p>Créer une classe <code>Rectangle</code> avec les attributs <code>longueur</code> et <code>largeur</code>.</br>
 Ajouter une méthode <code>calculerSurface()</code> qui retourne la surface du rectangle.</br>
 Créer un rectangle de 5 par 3 et afficher sa surface.</p>
+
+<%-- STEP 3: Call and display your external Rectangle class here --%>
+<%
+    // Instantiating the external Rectangle object
+    Rectangle monRectangle = new Rectangle(5, 3);
+%>
+<p><strong>Résultat Exercice 3 :</strong></p>
+<ul>
+    <li>Longueur : <%= monRectangle.longueur %></li>
+    <li>Largeur : <%= monRectangle.largeur %></li>
+    <li>Surface : <%= monRectangle.calculerSurface() %> m²</li>
+</ul>
 
 <h2>Exercice 4 : Le compte bancaire</h2>
 <p>Créer une classe <code>CompteBancaire</code> avec un attribut <code>solde</code>.</br>
