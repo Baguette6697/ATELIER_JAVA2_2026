@@ -1,4 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%-- IMPORT CLASSES--%>
+<%@page import="exercice.Voiture" %>
 <html>
 <head>
 <title>Les objets</title>
