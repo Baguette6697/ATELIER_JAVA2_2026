@@ -1,6 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%-- IMPORT CLASSES--%>
-<%@page import="exercice.Voiture" %>
+<%-- STEP 1: Import your external Voiture class at the top --%>
+<%@page import="exercice.Voiture" %> 
+
 <html>
 <head>
 <title>Les objets</title>
@@ -40,6 +41,7 @@
 <p>Créer une classe <code>Voiture</code> avec les attributs <code>marque</code>, <code>modele</code> et <code>annee</code>.</br>
 Instancier une voiture, lui affecter des valeurs et afficher ses caractéristiques.</p>
 
+<%-- STEP 2: Call and display your external Voiture class here --%>
 <%
     // Instantiating the external Voiture object
     Voiture maVoiture = new Voiture("Renault", "Clio", 2021);
@@ -50,6 +52,7 @@ Instancier une voiture, lui affecter des valeurs et afficher ses caractéristiqu
     <li>Modèle : <%= maVoiture.modele %></li>
     <li>Année : <%= maVoiture.annee %></li>
 </ul>
+
 
 <h2>Exercice 2 : Ajouter une méthode à la classe Personne</h2>
 <p>Ajouter à la classe <code>Personne</code> une méthode <code>seDecrire()</code> qui retourne une chaîne du type :</br>
