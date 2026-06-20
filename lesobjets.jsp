@@ -40,6 +40,17 @@
 <p>Créer une classe <code>Voiture</code> avec les attributs <code>marque</code>, <code>modele</code> et <code>annee</code>.</br>
 Instancier une voiture, lui affecter des valeurs et afficher ses caractéristiques.</p>
 
+<%
+    // Instantiating the external Voiture object
+    Voiture maVoiture = new Voiture("Renault", "Clio", 2021);
+%>
+<p><strong>Résultat Exercice 1 :</strong></p>
+<ul>
+    <li>Marque : <%= maVoiture.marque %></li>
+    <li>Modèle : <%= maVoiture.modele %></li>
+    <li>Année : <%= maVoiture.annee %></li>
+</ul>
+
 <h2>Exercice 2 : Ajouter une méthode à la classe Personne</h2>
 <p>Ajouter à la classe <code>Personne</code> une méthode <code>seDecrire()</code> qui retourne une chaîne du type :</br>
 "Je m'appelle Marie et j'ai 25 ans".</br>
