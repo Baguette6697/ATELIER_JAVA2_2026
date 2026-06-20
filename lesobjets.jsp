@@ -16,11 +16,29 @@
     <p><input type="submit" value="Créer la personne">
 </form>
 
-<%-- Déclaration d'une classe Personne avec deux attributs --%>
+<%-- Déclaration d'une classe Personne avec deux attributs PRIVÉS --%>
 <%!
     class Personne {
-        String nom;
-        int age;
+        private String nom;
+        private int age;
+
+        // Getters
+        String getNom() {
+            return nom;
+        }
+
+        int getAge() {
+            return age;
+        }
+
+        // Setters
+        void setNom(String nom) {
+            this.nom = nom;
+        }
+
+        void setAge(int age) {
+            this.age = age;
+        }
 
         // Méthode seDecrire pour l'exercice 2
         String seDecrire() {
@@ -35,14 +53,14 @@
 
 <% if (nom != null && age != null && !nom.isEmpty() && !age.isEmpty()) { %>
 
-    <%-- Instanciation d'un objet Personne et affectation des attributs --%>
+    <%-- Instanciation d'un objet Personne et affectation des attributs via setters --%>
     <% Personne p = new Personne(); %>
-    <% p.nom = nom; %>
-    <% p.age = Integer.parseInt(age); %>
+    <% p.setNom(nom); %>
+    <% p.setAge(Integer.parseInt(age)); %>
 
     <p>Objet Personne créé !</p>
-    <p>Nom : <%= p.nom %></p>
-    <p>Age : <%= p.age %> ans</p>
+    <p>Nom : <%= p.getNom() %></p>
+    <p>Age : <%= p.getAge() %> ans</p>
 
 <h2>Exercice 1 : La classe Voiture</h2>
 <p>Créer une classe <code>Voiture</code> avec les attributs <code>marque</code>, <code>modele</code> et <code>annee</code>.</br>
@@ -90,6 +108,15 @@ Créer un rectangle de 5 par 3 et afficher sa surface.</p>
 <p>Modifier la classe <code>Personne</code> pour rendre les attributs <code>privés</code>.</br>
 Ajouter les getters et setters correspondants : <code>getNom()</code>, <code>setNom(...)</code>, <code>getAge()</code>, <code>setAge(...)</code>.</br>
 Adapter ensuite le code de la page pour utiliser ces accesseurs au lieu d'accéder directement aux attributs.</p>
+
+<p><strong>Résultat Exercice 5 :</strong></p>
+<% if (nom != null && age != null && !nom.isEmpty() && !age.isEmpty()) { %>
+    <p>Les attributs de la classe Personne sont maintenant <strong>privés</strong> et accessibles uniquement via les getters et setters.</p>
+    <p>Accès sécurisé au nom : <strong><%= p.getNom() %></strong></p>
+    <p>Accès sécurisé à l'âge : <strong><%= p.getAge() %></strong></p>
+<% } else { %>
+    <p><em>Complétez le formulaire initial pour voir les attributs protégés en action.</em></p>
+<% } %>
 
 <% } %>
 
