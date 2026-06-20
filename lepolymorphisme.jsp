@@ -118,11 +118,35 @@ Stocker un Chien et un Chat dans un tableau <code>Affichable[]</code> et appeler
 %>
 
 <p><strong>Résultat Exercice 3 :</strong></p>
-<ul>
-    <% for (Affichable a : affichables) { %>
-        <li><%= a.afficher() %></li>
-    <% } %>
-</ul>
+<table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse;">
+    <thead>
+        <tr style="background-color: #f0f0f0;">
+            <th>Nom</th>
+            <th>Type d'animal</th>
+            <th>Bruit</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% 
+            for (Affichable a : affichables) {
+                Animal animal = (Animal) a;
+                String type = "";
+                if (animal instanceof Chien) {
+                    type = "Chien";
+                } else if (animal instanceof Chat) {
+                    type = "Chat";
+                } else {
+                    type = "Autre animal";
+                }
+        %>
+        <tr>
+            <td><%= animal.nom %></td>
+            <td><%= type %></td>
+            <td><%= animal.crier() %></td>
+        </tr>
+        <% } %>
+    </tbody>
+</table>
 
 <h2>Exercice 4 : Ajouter un Oiseau</h2>
 <p>Créer une nouvelle sous-classe <code>Oiseau</code> qui hérite de <code>Animal</code> et redéfinit <code>crier()</code> par "Cui cui !".</br>
